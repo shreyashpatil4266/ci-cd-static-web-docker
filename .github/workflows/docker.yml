@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - master  # or main if your default branch is named "main"
-  # You can also specify paths if you want to trigger only on changes in specific files
-  # paths:
-  #   - '**/*.html'
-  #   - '**/*.css'
-  #   - '**/*.js'
 
 jobs:
   build:
@@ -31,5 +26,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/shreyash-static-web:latest
+          tags: shreyashpatil4266/shreyash-static-web:latest
 
