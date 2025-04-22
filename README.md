@@ -1,47 +1,55 @@
-# My Static Web
+# Project Setup Guide
 
-This repository hosts a static website built using a template from Creative Tim. The goal is to deploy the website using GitHub Pages.
+## 1. Clone the Repository
 
-## Steps Followed
+First, create a folder on your local machine where you want to store your project files. After that, clone the repository from which you want to take the application or website. Run the following command in your terminal:
 
-### 1. Create a Folder
-We created a folder to hold the project files.
 
-### 2. Clone the Template
-We cloned a static website template from **Creative Tim** to use as the base design for our website. To do this, we used the following command:
+git clone https://github.com/shreyashpatil4266/ci-cd-static-web-docker
 
-``
 
-git clone https://github.com/shreyashpatil4266/my-static-web
 
 git add .
-git commit -m "Initial commit with template files"
-git push -u origin main
+git commit -m "Initial commit with files from the old repository"
+git push origin master
 
 
-git checkout main
-git push origin --delete master
+docker_username: your_dockerhub_username
+change it into docker.yml file with your own username only dont give pass there 
 
 
-* Set Up GitHub Pages
-To host the site on GitHub Pages:
-
-Go to your repository on GitHub.
-
-Navigate to Settings > Pages.
-
-Under Source, select the main branch and /root folder for deployment.
-
-Your website will now be live on GitHub Pages!
+make cahnges in the github go--settings----secrets and variable -----actions ----new repository secret ----create give name as DOCKER_USERNAME -----value your username of docker hub------then same create new -----DOCKER_PASSWORD ----- value your passowrd ...
 
 
-**This is the screenshot when you are ready to go live using pages heck this first your default branch should be main and it should be selected
-when you navigate---settings---general---default Branch
-![Screenshot 2025-04-15 141037](https://github.com/user-attachments/assets/df5214ab-9804-42ea-aab1-2edd37e4d530)
 
 
-*This is important when you are in github pages this is the way it should look selected branch main and root 
-![Screenshot 2025-04-15 141050](https://github.com/user-attachments/assets/5368d63f-6d72-4a45-9c69-587aaf0c7017)
 
+
+open docker desktop if no installed installed it https://www.docker.com/products/docker-desktop/
+
+it will help creating the docker container 
+now the files are created as you cloned it the ngnix server will run the insex.htnnl on local host after run 
+
+
+
+but for autoamtion you have to use minikube in that start it creted two file one deploymeny.yml and one service.yml
+then kubectl apply -f deployment.yml              kubectl apply -f service.yml
+
+
+then run build and run docker in minikube and see the hit the ip you will see the index.html page 
+
+
+
+and now do the git push to everything-up-to-date..
+
+i have three change to be sure my project is working first run the local host and see the website 
+![Screenshot 2025-04-22 134335](https://github.com/user-attachments/assets/a8a8c84e-4e00-4fc8-89b8-92649dd838f3)
+
+then cahnge the code in index.html like remove all the detail and again run and build then see the changes 
+![Screenshot 2025-04-22 135421](https://github.com/user-attachments/assets/36cc3488-ff9a-4e0c-8d4f-1f4e2bb27da5)
+
+
+then revert the changes from git logs and then run again 
+![Screenshot 2025-04-22 140240](https://github.com/user-attachments/assets/b5b2efd6-9551-401e-8a4d-8ed99032277e)
 
 
